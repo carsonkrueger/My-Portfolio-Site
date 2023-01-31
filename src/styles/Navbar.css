@@ -1,0 +1,9 @@
+#head-img {
+  size: 2em;
+}
+
+#navbar {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+}
