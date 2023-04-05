@@ -1,9 +1,21 @@
-#head-img {
-  size: 2em;
-}
-
 #navbar {
   display: flex;
   position: absolute;
+  flex-direction: row;
+}
+
+#nav-img {
+  size: 2em;
+  max-width: 12%;
+  /* color: red; */
+}
+
+#nav-text-container {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
+}
+
+#nav-text-container > h1 {
+  font-size: 2em;
 }
