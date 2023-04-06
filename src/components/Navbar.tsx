@@ -1,6 +1,5 @@
 import React from "react";
-import "../styles/Navbar.css";
-// const carrotImg = require("../assets/carrotBrackets.svg");
+// import "../styles/Navbar.css";
 import carrotImg from "../assets/carrotBrackets.svg";
 
 const Navbar = () => {

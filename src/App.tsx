@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import "./styles/App.css";
 
 // const reactLogo = require("./assets/react.svg");
 

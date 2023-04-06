@@ -1,4 +1,8 @@
-#root {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
   --gray-x-11-gray: #bfbdc1ff;
   --old-lavender: #6d6a75ff;
   --black-coffee: #37323eff;
