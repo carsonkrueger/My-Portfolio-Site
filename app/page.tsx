@@ -34,19 +34,19 @@ export default function Home() {
         </div>
       </header>
 
-      <div className=" border-white flex flex-col pt-[8rem] font-mono text-white text-lg space-y-5">
-        Hi my names is...
+      <div className="max-w-screen-md border-white flex flex-col pt-[8rem] font-mono text-white text-lg space-y-3 md:[&>*]:mr-5">
+        <div>Hi my names is...</div>
         <div className="flex text-teal-500 text-4xl sm:text-6xl">
-          Carso
-          <div className="text-orange-600">n Kreu</div>
-          <div>ger</div>
+          carson_
+          <div className="text-orange-600">kreuger</div>
         </div>
         <div className="">
           I'm an aspiring front-end developer with a lot of passion for Computer
-          Science! I'm
+          Science! I'm currently enrolled in the CS program at Utah Valley
+          University, expected to graduate Spring of 2024.
         </div>
         <Button
-          className="flex items-center justify-center h-10 w-24 mt-5 ml-3 sm:mt-7 border border-orange-600 text-orange-600 rounded-md text-[1rem]"
+          className="flex items-center justify-center h-10 w-24 sm:mt-7 border border-orange-600 text-orange-600 rounded-md text-[1rem]"
           text="Contact"
         />
       </div>
