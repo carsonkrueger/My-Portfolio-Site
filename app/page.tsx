@@ -4,11 +4,11 @@ import Project from "./(components)/Project";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center px-5 py-5 sm:py-8 sm:px-8 bg-mediumdark">
-      <header className="flex flex-row min-w-full items-center justify-end xs:justify-between">
+    <div className=" flex min-h-screen flex-col items-center px-5 py-5 sm:py-8 sm:px-8 bg-wavesTop bg-no-repeat bg-cover">
+      <header className="absolute px-5 sm:px-8 flex flex-row min-w-full items-center justify-end xs:justify-between">
         <h1 className="hidden xs:flex sm:justify-end font-mono text-orange-600 text-2xl md:text-3xl">
-          Welco<div className="text-white">me.</div>
-          <div className="text-teal-500">tsx</div>
+          Welcome
+          <div className="text-invis">.tsx</div>
         </h1>
 
         <div className="flex flex-row justify-between items-center space-x-2 md:space-x-3">
@@ -35,13 +35,11 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="flex flex-col lg:justify-around lg:flex-row min-w-full my-auto text-white font-mono text-lg space-y-24">
-        <div className="flex flex-col space-y-3 my-auto lg:max-w-screen-md">
+      <div className="flex justify-center min-h-screen items-center text-white font-mono text-lg ">
+        <div className="flex flex-col space-y-3 md:max-w-screen-sm lg:max-w-screen-md">
           <div>Hi my names is...</div>
-          <div className="flex text-teal-500 text-4xl sm:text-6xl">
-            Carso
-            <div className="text-white">n_</div>
-            <div className="text-orange-600">Kreuger</div>
+          <div className="flex text-orange-600 text-4xl sm:text-6xl pl-3">
+            Carson Krueger
           </div>
           <div className="">
             I&apos;m an aspiring front-end developer with a lot of passion for
@@ -49,28 +47,24 @@ export default function Home() {
             Utah Valley University, expected to graduate Spring of 2024.
           </div>
           <Button
-            className="flex items-center justify-center h-10 w-24 sm:mt-7 border border-orange-600 text-orange-600 rounded-md text-[1rem]"
+            className="flex items-center justify-center h-10 w-24 sm:mt-7 ml-3 border border-orange-600 text-orange-600 rounded-md text-[1rem]"
             text="Contact"
           />
         </div>
+      </div>
 
-        <div className="my-auto max-w-screen-sm lg:max-w-screen-xs lg:pt-28 space-y-5">
-          <div className="flex text-4xl ">
-            <div className="text-orange-600">Pro</div>
-            je
-            <div className="text-teal-500">ct</div>s
-          </div>
-          <Project
-            name="Repr"
-            body="An Android mobile app on the Google Play Store used for recording workout weights and reps. Built using React Native & Expo."
-            href="https://play.google.com/store/apps/details?id=com.crkruege00.REPR"
-          />
-          <Project
-            name="Snake Shake"
-            body="A snake game built using React JS, and vite, hosted using Vercel."
-            href="https://snake-shake.vercel.app/"
-          />
-        </div>
+      <div className=" max-w-screen-xs space-y-5 font-mono text-white">
+        <div className="flex justify-center text-4xl">Projects</div>
+        <Project
+          name="Repr"
+          body="An android mobile app on the Google Play Store used for recording workout weights and reps. Built using React Native & Expo."
+          href="https://play.google.com/store/apps/details?id=com.crkruege00.REPR"
+        />
+        <Project
+          name="Snake Shake"
+          body="A snake game built using React JS, and vite, hosted using Vercel."
+          href="https://snake-shake.vercel.app/"
+        />
       </div>
     </div>
   );

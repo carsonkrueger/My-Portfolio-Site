@@ -9,17 +9,24 @@ type privateProps = {
 
 export default function Project({ name, body, href }: privateProps) {
   return (
-    <div className="flex flex-col [&>*]:flex [&>*]:items-center [&>*]:p-3 text-sm">
-      <div className="text-xl text-teal-500">
-        <Button className=" rounded-md pr-2" href={href} target="_blank">
-          <Image
-            width={23}
-            height={23}
-            src="/externalLink.svg"
-            alt={`Link to ${name} project`}
-          ></Image>
+    <div className="flex flex-col [&>*]:flex [&>*]:p-3 text-md">
+      <div className="text-xl">
+        <Button
+          className="flex rounded-md border p-1 border-white text-white self-center"
+          href={href}
+          target="_blank"
+        >
+          <>
+            {name}
+            <Image
+              className="pl-1"
+              width={23}
+              height={23}
+              src="/externalLink.svg"
+              alt={`Link to ${name} project`}
+            />
+          </>
         </Button>
-        {name}
       </div>
       {body}
     </div>
