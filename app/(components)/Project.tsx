@@ -9,10 +9,10 @@ type privateProps = {
 
 export default function Project({ name, body, href }: privateProps) {
   return (
-    <div className="flex flex-col [&>*]:flex [&>*]:p-3 text-md">
+    <div className="flex flex-col [&>*]:flex [&>*]:py-3 text-md">
       <div className="text-xl">
         <Button
-          className="flex rounded-md border p-1 border-white text-white self-center"
+          className="flex border py-0.5 rounded-md p-1 text-white shadow-xl self-center"
           href={href}
           target="_blank"
         >
