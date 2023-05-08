@@ -32,6 +32,8 @@ export default function Home() {
           <Button
             className="flex items-center justify-center h-9 w-20 text-teal-500 border border-teal-500 rounded-md font-mono text-[1rem]"
             text="Resume"
+            href="/Resume.pdf"
+            target="_blank"
           />
         </div>
       </header>
