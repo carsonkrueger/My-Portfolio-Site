@@ -1,11 +1,13 @@
 import HeaderIcon from "./(components)/HeaderIcon";
 import Button from "./(components)/Button";
+import ButtonClient from "./(components)/ButtonClient";
 import Project from "./(components)/Project";
 import Skill from "./(components)/Skill";
+import Contact from "./(components)/Contact";
 
 export default function Home() {
   return (
-    <div className=" flex min-h-screen flex-col items-center px-5 py-5 sm:py-8 sm:px-8 bg-wavesTop bg-no-repeat bg-cover">
+    <div className="flex min-h-screen flex-col items-center px-5 py-5 sm:py-8 sm:px-8 bg-wavesTop bg-no-repeat bg-cover">
       <header className="absolute px-5 sm:px-8 flex flex-row min-w-full items-center justify-end xs:justify-between">
         <h1 className="hidden xs:flex sm:justify-end font-mono text-orange-600 text-2xl md:text-3xl">
           Welcome
@@ -44,12 +46,12 @@ export default function Home() {
           <div className="flex text-orange-600 text-4xl sm:text-6xl pl-3">
             Carson Krueger
           </div>
-          <div className="">
+          <p>
             I&apos;m an aspiring front-end developer with a lot of passion for
             Computer Science! I&apos;m currently enrolled in the CS program at
             Utah Valley University, expected to graduate Spring of 2024.
-          </div>
-          <Button
+          </p>
+          <ButtonClient
             className="flex items-center justify-center h-10 w-24 sm:mt-7 ml-3 border border-orange-600 text-orange-600 rounded-md text-[1rem]"
             text="Contact"
           />
@@ -98,6 +100,8 @@ export default function Home() {
           <Skill name={"Constantly learning new things!"} body={""} />
         </div>
       </div>
+
+      <Contact />
     </div>
   );
 }
