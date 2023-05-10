@@ -12,7 +12,7 @@ enum NotiType {
 }
 
 export function NotificationWrapper() {
-  const [notifications, dispatch] = useReducer(reducer, Array<NotiType>());
+  //   const [notifications, dispatch] = useReducer(reducer, Array<NotiType>());
   function reducer(notiType: NotiType) {
     switch (notiType) {
       case NotiType.SUCCESS:
