@@ -12,7 +12,7 @@ export default function Project({ name, body, href }: privateProps) {
     <div className="flex flex-col [&>*]:flex [&>*]:py-3 text-md">
       <div className="text-xl">
         <Button
-          className="flex border py-0.5 rounded-md p-1 text-white shadow-xl self-center"
+          className="flex border rounded-md py-1 px-2 text-white shadow-xl self-center"
           href={href}
           target="_blank"
         >

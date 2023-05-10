@@ -23,9 +23,6 @@ module.exports = {
         dark: "#272727",
         orange: "#d55c0e",
       },
-      backgroundImage: {
-        wavesTop: "url(/layeredWaves.svg)",
-      },
       borderColor: {
         lightdark: "#3e3e42",
         mediumdark: "#2d2d30",

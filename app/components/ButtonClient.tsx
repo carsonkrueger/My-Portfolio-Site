@@ -6,6 +6,7 @@ type privateProps = {
   className?: string;
   href?: string;
   target?: string;
+  onClick?: (e?: any) => void;
 };
 
 const ButtonClient = ({
@@ -14,14 +15,10 @@ const ButtonClient = ({
   className,
   href = "#",
   target,
+  onClick,
 }: privateProps) => {
   return (
-    <a
-      className={className}
-      onClick={() => console.log("Contact")}
-      href={href}
-      target={target}
-    >
+    <a className={className} onClick={onClick} href={href} target={target}>
       {text}
       {children}
     </a>
