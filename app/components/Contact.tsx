@@ -17,8 +17,8 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        ensure(process.env.EMAILJS_SERVICE),
-        ensure(process.env.EMAILJS_TEMPLATE),
+        ensure(process.env.NEXT_PUBLIC_EMAILJS_SERVICE),
+        ensure(process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE),
         ensure(form.current)
       )
       .then(() => {
@@ -31,8 +31,8 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    if (process.env.EMAILJS_PUBLIC_KEY)
-      emailjs.init(process.env.EMAILJS_PUBLIC_KEY);
+    if (process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
     else console.log("NO ENV VAR");
   }, []);
 
