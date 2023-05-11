@@ -39,11 +39,11 @@ const Contact = () => {
   return (
     <form
       ref={form}
-      className="min-h-[30rem] px-5 max-w-lg w-[100%] flex justify-start flex-col text-white font-mono [&>*]:rounded-md space-y-1 [&>label]:pt-1"
+      className="min-h-[30rem] px-5 max-w-lg w-[100%] flex justify-start flex-col text-white font-mono [&>*]:rounded-md space-y-1 [&>label]:pt-1 [&>input]:px-1"
       onSubmit={(e) => sendEmail(e)}
     >
       <p className="text-2xl pb-5 self-center">Contact</p>
-      <div className="flex flex-row [&>*]:w-[47%] flex-wrap justify-between [&>*]:rounded-[inherit] [&>label]:pb-1">
+      <div className="flex flex-row [&>*]:w-[47%] flex-wrap justify-between [&>*]:rounded-[inherit] [&>label]:pb-1 [&>input]:px-1">
         <label htmlFor="first_name">First Name</label>
         <label htmlFor="last_name">Last Name</label>
         <input
@@ -73,10 +73,10 @@ const Contact = () => {
       <textarea
         name="message"
         id="message"
-        className="text-black min-h-[7rem]"
+        className="text-black min-h-[7rem] px-1"
         required
       />
-      <div className="[&>*]:rounded-[inherit] ">
+      <div className="[&>*]:rounded-[inherit] [&>input]:px-1">
         <input
           type="submit"
           value="Send"
