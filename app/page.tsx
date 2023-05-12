@@ -1,3 +1,7 @@
+"use client";
+
+import { ElementRef, useRef } from "react";
+
 import HeaderIcon from "./components/HeaderIcon";
 import Button from "./components/Button";
 import ButtonClient from "./components/ButtonClient";
@@ -6,11 +10,15 @@ import Skill from "./components/Skill";
 import Contact from "./components/Contact";
 import NotificationWrapper from "../components/notifications";
 
+import { ensure } from "@/utils/ensure";
+
 export default function Home() {
+  const notiRef = useRef(null);
+
   return (
     <div className="flex min-h-screen flex-col items-center ">
       <header className="fixed px-5 py-5 flex flex-row bg-mediumdark min-w-full items-center justify-end xs:justify-between">
-        <h1 className="hidden xs:flex sm:justify-end font-mono text-primary text-2xl md:text-2xl">
+        <h1 className="hidden xs:flex sm:justify-end font-mono text-white text-2xl md:text-2xl">
           Welcome
           <p className="text-lightdark">.tsx</p>
         </h1>
@@ -33,13 +41,15 @@ export default function Home() {
           />
 
           <Button
-            className="flex items-center justify-center shadow-xl px-3 py-1 text-white bg-primary rounded-md font-mono text-[.9rem]"
+            className="transition-transform hover:-translate-y-1 flex items-center justify-center shadow-xl px-3 py-1 text-white bg-primary rounded-md font-mono text-[.9rem]"
             text="Resume"
             href="/Resume.pdf"
             target="_blank"
           />
         </div>
       </header>
+
+      <NotificationWrapper ref={notiRef} />
 
       <div className="flex px-5 py-5 justify-center min-h-screen items-center text-lightdark font-mono text-md ">
         <div className="flex flex-col space-y-3 max-w-screen-xs lg:max-w-screen-sm">
@@ -54,7 +64,7 @@ export default function Home() {
           </p>
           <ButtonClient
             // onClick={(e: any) => e.preventDefault()}
-            className="flex items-center justify-center bg-primary self-start px-3 py-1 sm:mt-7 ml-3 shadow-xl text-white rounded-md text-[1rem]"
+            className="transition-transform hover:-translate-y-1 flex items-center justify-center bg-primary self-start px-3 py-1 sm:mt-7 ml-3 shadow-xl text-white rounded-md text-[1rem]"
             text="Contact"
           />
         </div>
@@ -103,7 +113,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Contact />
+      <Contact addNotification={notiRef.current.addNotification} />
     </div>
   );
 }
