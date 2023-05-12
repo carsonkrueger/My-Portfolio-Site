@@ -39,10 +39,10 @@ const Contact = () => {
   return (
     <form
       ref={form}
-      className="min-h-[30rem] px-5 max-w-lg w-[100%] flex justify-start flex-col text-white font-mono [&>*]:rounded-md space-y-1 [&>label]:pt-1 [&>input]:px-1"
+      className="min-h-[30rem] px-5 max-w-lg w-[100%] flex justify-start flex-col text-secondary font-mono [&>*]:rounded-md space-y-1 [&>label]:pt-1 [&>input]:px-1 [&>input]:border [&>input]:border-secondary"
       onSubmit={(e) => sendEmail(e)}
     >
-      <p className="text-2xl pb-5 self-center">Contact</p>
+      <p className="text-2xl pb-5 self-center text-primary">Contact</p>
       <div className="flex flex-row [&>*]:w-[47%] flex-wrap justify-between [&>*]:rounded-[inherit] [&>label]:pb-1 [&>input]:px-1">
         <label htmlFor="first_name">First Name</label>
         <label htmlFor="last_name">Last Name</label>
@@ -80,13 +80,13 @@ const Contact = () => {
         <input
           type="submit"
           value="Send"
-          className="border  border-white w-16 h-7 mt-5"
+          className="border  border-secondary w-16 h-7 mt-5"
         />
       </div>
 
       {/* <ButtonClient
         text="Send"
-        className="border border-white self-start py-0.5 px-2 "
+        className="border border-secondary self-start py-0.5 px-2 "
         onClick={sendEmail}
       /> */}
     </form>

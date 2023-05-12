@@ -4,15 +4,15 @@ import ButtonClient from "./components/ButtonClient";
 import Project from "./components/Project";
 import Skill from "./components/Skill";
 import Contact from "./components/Contact";
-// import { NotifySuccess } from "../components/notifications";
+import NotificationWrapper from "../components/notifications";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center bg-mediumdark">
-      <header className="absolute px-5 py-5 flex flex-row min-w-full items-center justify-end xs:justify-between">
-        <h1 className="hidden xs:flex sm:justify-end font-mono text-orange-600 text-2xl md:text-2xl">
+    <div className="flex min-h-screen flex-col items-center ">
+      <header className="fixed px-5 py-5 flex flex-row bg-mediumdark min-w-full items-center justify-end xs:justify-between">
+        <h1 className="hidden xs:flex sm:justify-end font-mono text-primary text-2xl md:text-2xl">
           Welcome
-          <p className="text-invis">.tsx</p>
+          <p className="text-lightdark">.tsx</p>
         </h1>
 
         <div className="flex flex-row justify-between items-center space-x-2 md:space-x-3">
@@ -33,7 +33,7 @@ export default function Home() {
           />
 
           <Button
-            className="flex items-center justify-center px-3 py-1 text-orange-600 border border-orange-600 rounded-md font-mono text-[.9rem]"
+            className="flex items-center justify-center shadow-xl px-3 py-1 text-white bg-primary rounded-md font-mono text-[.9rem]"
             text="Resume"
             href="/Resume.pdf"
             target="_blank"
@@ -41,12 +41,10 @@ export default function Home() {
         </div>
       </header>
 
-      {/* <NotifySuccess show={true} /> */}
-
-      <div className="flex px-5 py-5 justify-center min-h-screen items-center text-white font-mono text-md ">
+      <div className="flex px-5 py-5 justify-center min-h-screen items-center text-lightdark font-mono text-md ">
         <div className="flex flex-col space-y-3 max-w-screen-xs lg:max-w-screen-sm">
           <div>Hi my names is...</div>
-          <div className="flex text-orange-600 text-4xl sm:text-5xl pl-3">
+          <div className="flex text-primary text-4xl sm:text-5xl pl-3">
             Carson Krueger
           </div>
           <p>
@@ -55,13 +53,14 @@ export default function Home() {
             Utah Valley University, expected to graduate Spring of 2024.
           </p>
           <ButtonClient
-            className="flex items-center justify-center self-start px-3 py-1 sm:mt-7 ml-3 border border-orange-600 text-orange-600 rounded-md text-[1rem]"
+            // onClick={(e: any) => e.preventDefault()}
+            className="flex items-center justify-center bg-primary self-start px-3 py-1 sm:mt-7 ml-3 shadow-xl text-white rounded-md text-[1rem]"
             text="Contact"
           />
         </div>
       </div>
 
-      <div className="px-5 bg-orange min-h-screen min-w-full flex flex-col mb-32 space-y-28 py-28 lg:flex-row lg:space-x-32 lg:space-y-0 justify-center items-center font-mono text-white">
+      <div className="px-5  min-h-[80vh] min-w-full flex flex-col mb-32 space-y-28 py-28 lg:flex-row lg:space-x-32 lg:space-y-0 justify-center items-center font-mono text-lightdark">
         <div className="max-w-screen-xs space-y-3">
           <div className="flex justify-center text-4xl">Projects</div>
           <Project
