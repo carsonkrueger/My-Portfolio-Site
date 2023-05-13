@@ -1,6 +1,6 @@
 "use client";
 
-import { ElementRef, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import HeaderIcon from "./components/HeaderIcon";
 import Button from "./components/Button";
@@ -8,12 +8,22 @@ import ButtonClient from "./components/ButtonClient";
 import Project from "./components/Project";
 import Skill from "./components/Skill";
 import Contact from "./components/Contact";
-import NotificationWrapper from "../components/notifications";
+import Notification from "../components/Notification";
 
-import { ensure } from "@/utils/ensure";
+import { NotiType } from "./types/types";
 
 export default function Home() {
-  const notiRef = useRef(null);
+  const [show, setShow] = useState<boolean>(false);
+  const noti = useRef<NotiType>(NotiType.FAILURE);
+
+  function addNotification(notiType: NotiType): void {
+    noti.current = notiType;
+    setShow(true);
+  }
+
+  function removeNotification(): void {
+    setShow(false);
+  }
 
   return (
     <div className="flex min-h-screen flex-col items-center ">
@@ -49,7 +59,13 @@ export default function Home() {
         </div>
       </header>
 
-      <NotificationWrapper ref={notiRef} />
+      <div className="fixed right-0 mt-24 flex flex-col space-y-3 mr-5">
+        <Notification
+          show={show}
+          isSuccessful={noti.current}
+          removeNotification={removeNotification}
+        />
+      </div>
 
       <div className="flex px-5 py-5 justify-center min-h-screen items-center text-lightdark font-mono text-md ">
         <div className="flex flex-col space-y-3 max-w-screen-xs lg:max-w-screen-sm">
@@ -113,7 +129,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Contact addNotification={notiRef.current.addNotification} />
+      <Contact show={show} addNotification={addNotification} />
     </div>
   );
 }

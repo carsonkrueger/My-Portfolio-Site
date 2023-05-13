@@ -8,17 +8,18 @@ import { NotiType } from "../types/types";
 
 interface props {
   addNotification: (arg: NotiType) => void;
+  show: boolean;
 }
 
-const Contact = ({ addNotification }: props) => {
-  const form = createRef<HTMLFormElement>();
+const Contact = ({ addNotification, show }: props) => {
+  const form = useRef<HTMLFormElement>(null);
   const sent = useRef(false);
 
   const sendEmail = (e: FormEvent) => {
     e.preventDefault();
 
     // do not let user send multiple emails
-    if (sent.current) return;
+    if (show) return;
 
     emailjs
       .sendForm(
@@ -29,11 +30,9 @@ const Contact = ({ addNotification }: props) => {
       .then(() => {
         addNotification(NotiType.SUCCESS);
         sent.current = true;
-        // console.log("SUCCESS");
       })
       .catch((err) => {
         addNotification(NotiType.FAILURE);
-        console.log("Email send FAILED:\n", err);
       });
   };
 
@@ -83,19 +82,13 @@ const Contact = ({ addNotification }: props) => {
         className="text-black min-h-[7rem] px-1 border border-lightdark"
         required
       />
-      <div className="[&>*]:rounded-[inherit] [&>input]:px-1 ">
+      <div className="bg-primary text-white  w-16 h-7 mt-5 [&>*]:rounded-[inherit] [&>input]:px-1">
         <input
           type="submit"
           value="Send"
-          className="bg-primary text-white w-16 h-7 mt-5"
+          className="w-[100%] h-[100%] hover:cursor-pointer"
         />
       </div>
-
-      {/* <ButtonClient
-        text="Send"
-        className="border border-secondary self-start py-0.5 px-2 "
-        onClick={sendEmail}
-      /> */}
     </form>
   );
 };
