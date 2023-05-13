@@ -7,26 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        // poppins: ["Poppins", "sans-serif"],
-        inter: ["Inter", "sans-serif"],
-      },
-      textColor: {
-        invis: "#49494a",
-        lightdark: "#3e3e42",
-        mediumdark: "#2d2d30",
-        dark: "#272727",
-      },
-      backgroundColor: {
-        lightdark: "#3e3e42",
-        mediumdark: "#2d2d30",
-        dark: "#272727",
-        orange: "#d55c0e",
-      },
-      borderColor: {
-        lightdark: "#3e3e42",
-        mediumdark: "#2d2d30",
-        dark: "#272727",
+      colors: {
+        primary: "#e35700",
+        secondary: "#ffb080",
+        invis: "#b0b0b0",
+        lightdark: "#969696",
+        mediumdark: "#696969",
       },
     },
     screens: {
@@ -36,6 +22,14 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
+    },
+    animation: {
+      toast: "toast 8s linear 1 forwards",
+    },
+    keyframes: {
+      toast: {
+        "100%": { transform: "translateX(-100%)" },
+      },
     },
   },
   plugins: [],

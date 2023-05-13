@@ -17,7 +17,7 @@ export default function HeaderIcon({
 }: privateProps) {
   return (
     <a
-      className="flex justify-center items-center w-7 h-7 md:w-7 md:h-7 rounded-lg border-black radius"
+      className="transition-transform hover:-translate-y-1 flex justify-center items-center w-8 h-8 rounded-xl shadow-md radius"
       href={url}
       target="_blank"
     >

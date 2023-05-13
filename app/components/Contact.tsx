@@ -4,16 +4,23 @@ import { useRef, createRef, FormEvent, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 import { ensure } from "../../utils/ensure";
+import { NotiType } from "../types/types";
 
-const Contact = () => {
-  const form = createRef<HTMLFormElement>();
+interface props {
+  addNotification: (arg: NotiType) => void;
+  show: boolean;
+}
+
+const Contact = ({ addNotification, show }: props) => {
+  const form = useRef<HTMLFormElement>(null);
   const sent = useRef(false);
 
   const sendEmail = (e: FormEvent) => {
     e.preventDefault();
 
     // do not let user send multiple emails
-    if (sent.current) return;
+    if (show || sent.current) return;
+    sent.current = true;
 
     emailjs
       .sendForm(
@@ -22,11 +29,12 @@ const Contact = () => {
         ensure(form.current)
       )
       .then(() => {
-        console.log("SUCCESS");
-        sent.current = true;
+        addNotification(NotiType.SUCCESS);
+        sent.current = false;
       })
       .catch((err) => {
-        console.log("Email send FAILED:\n", err);
+        addNotification(NotiType.FAILURE);
+        sent.current = false;
       });
   };
 
@@ -39,11 +47,11 @@ const Contact = () => {
   return (
     <form
       ref={form}
-      className="min-h-[30rem] px-5 max-w-lg w-[100%] flex justify-start flex-col text-white font-mono [&>*]:rounded-md space-y-1 [&>label]:pt-1 [&>input]:px-1"
+      className="min-h-[30rem] px-5 max-w-lg w-[100%] flex justify-start flex-col text-primary font-mono [&>*]:rounded-md space-y-1 [&>label]:pt-1 [&>input]:px-1 [&>input]:border [&>input]:border-lightdark"
       onSubmit={(e) => sendEmail(e)}
     >
-      <p className="text-2xl pb-5 self-center">Contact</p>
-      <div className="flex flex-row [&>*]:w-[47%] flex-wrap justify-between [&>*]:rounded-[inherit] [&>label]:pb-1 [&>input]:px-1">
+      <p className="text-2xl pb-5 self-center text-lightdark">Contact</p>
+      <div className="flex flex-row [&>*]:w-[47%] flex-wrap justify-between [&>*]:rounded-[inherit] [&>label]:pb-1 [&>input]:px-1 [&>input]:border [&>input]:border-lightdark">
         <label htmlFor="first_name">First Name</label>
         <label htmlFor="last_name">Last Name</label>
         <input
@@ -73,22 +81,16 @@ const Contact = () => {
       <textarea
         name="message"
         id="message"
-        className="text-black min-h-[7rem] px-1"
+        className="text-black min-h-[7rem] px-1 border border-lightdark"
         required
       />
-      <div className="[&>*]:rounded-[inherit] [&>input]:px-1">
+      <div className="bg-primary text-white  w-16 h-7 mt-5 [&>*]:rounded-[inherit] [&>input]:px-1">
         <input
           type="submit"
           value="Send"
-          className="border  border-white w-16 h-7 mt-5"
+          className="w-[100%] h-[100%] hover:cursor-pointer"
         />
       </div>
-
-      {/* <ButtonClient
-        text="Send"
-        className="border border-white self-start py-0.5 px-2 "
-        onClick={sendEmail}
-      /> */}
     </form>
   );
 };
