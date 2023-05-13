@@ -19,7 +19,8 @@ const Contact = ({ addNotification, show }: props) => {
     e.preventDefault();
 
     // do not let user send multiple emails
-    if (show) return;
+    if (show || sent.current) return;
+    sent.current = true;
 
     emailjs
       .sendForm(
@@ -29,10 +30,11 @@ const Contact = ({ addNotification, show }: props) => {
       )
       .then(() => {
         addNotification(NotiType.SUCCESS);
-        sent.current = true;
+        sent.current = false;
       })
       .catch((err) => {
         addNotification(NotiType.FAILURE);
+        sent.current = false;
       });
   };
 
