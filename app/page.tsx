@@ -15,7 +15,7 @@ import { NotiType } from "./types/types";
 export default function Home() {
   const [show, setShow] = useState<boolean>(false);
   const noti = useRef<NotiType>(NotiType.FAILURE);
-  const contactRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null!);
 
   function addNotification(notiType: NotiType): void {
     noti.current = notiType;
@@ -92,7 +92,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-5  min-h-[80vh] min-w-full flex flex-col mb-32 space-y-28 py-28 lg:flex-row lg:space-x-32 lg:space-y-0 justify-center items-center font-mono text-lightdark">
+      <div className="px-5 bg-invis min-h-[80vh] min-w-full flex flex-col mb-32 space-y-28 py-28 lg:flex-row lg:space-x-32 lg:space-y-0 justify-center items-center font-mono text-mediumdark">
         <div className="max-w-screen-xs space-y-3">
           <div className="flex justify-center text-4xl">Projects</div>
           <Project
