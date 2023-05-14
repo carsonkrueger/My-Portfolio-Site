@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 import HeaderIcon from "./components/HeaderIcon";
 import Button from "./components/Button";
@@ -15,6 +15,7 @@ import { NotiType } from "./types/types";
 export default function Home() {
   const [show, setShow] = useState<boolean>(false);
   const noti = useRef<NotiType>(NotiType.FAILURE);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   function addNotification(notiType: NotiType): void {
     noti.current = notiType;
@@ -23,6 +24,11 @@ export default function Home() {
 
   function removeNotification(): void {
     setShow(false);
+  }
+
+  function scrollTo(e: any, ref: Element) {
+    e.preventDefault();
+    if (ref) ref.scrollIntoView({ behavior: "smooth" });
   }
 
   return (
@@ -74,12 +80,12 @@ export default function Home() {
             Carson Krueger
           </div>
           <p>
-            I&apos;m an aspiring front-end developer with a lot of passion for
+            I&apos;m an aspiring full stack developer with a lot of passion for
             Computer Science! I&apos;m currently enrolled in the CS program at
             Utah Valley University, expected to graduate Spring of 2024.
           </p>
           <ButtonClient
-            // onClick={(e: any) => e.preventDefault()}
+            onClick={(e: any) => scrollTo(e, contactRef.current)}
             className="transition-transform hover:-translate-y-1 flex items-center justify-center bg-primary self-start px-3 py-1 sm:mt-7 ml-3 shadow-xl text-white rounded-md text-[1rem]"
             text="Contact"
           />
@@ -129,6 +135,7 @@ export default function Home() {
         </div>
       </div>
 
+      <div ref={contactRef}></div>
       <Contact show={show} addNotification={addNotification} />
     </div>
   );
