@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col items-center ">
-      <header className="fixed px-5 py-5 flex flex-row bg-mediumdark min-w-full items-center justify-end xs:justify-between">
+      <header className="fixed z-10 px-5 py-5 flex flex-row bg-mediumdark min-w-full items-center justify-end xs:justify-between">
         <h1 className="hidden xs:flex sm:justify-end font-mono text-white text-2xl md:text-2xl">
           Welcome
           <p className="text-lightdark">.tsx</p>
