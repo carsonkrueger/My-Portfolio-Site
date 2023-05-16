@@ -92,7 +92,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-5 bg-invis min-h-[80vh] min-w-full flex flex-col mb-32 space-y-28 py-28 lg:flex-row lg:space-x-32 lg:space-y-0 justify-center items-center font-mono text-mediumdark">
+      <div className="px-5 bg-invis min-h-[80vh] min-w-full flex flex-col mb-32 space-y-28 py-28 lg:flex-row lg:space-x-32 lg:space-y-0 items-center lg:items-start justify-center font-mono text-mediumdark">
         <div className="max-w-screen-xs space-y-3">
           <div className="flex justify-center text-4xl">Projects</div>
           <Project
@@ -117,21 +117,23 @@ export default function Home() {
           />
         </div>
 
-        <div className="max-w-screen-xs min-w-[18rem] space-y-3 justify-center">
-          <div className="flex justify-center text-4xl">Skills</div>
-          <Skill name={"JavaScript"} body={"4+ years"} />
-          <Skill name={"TypeScript"} body={"~6 months"} />
-          <Skill name={"React JS"} body={"2+ years"} />
-          <Skill name={"React native"} body={"2 years"} />
-          <Skill name={"Next JS"} body={"<6 months"} />
-          <Skill name={"Git"} body={"3+ years"} />
-          <Skill name={"CSS"} body={"2 years"} />
-          <Skill name={"Tailwind"} body={"<6 months"} />
-          <Skill name={"C++"} body={"3+ years"} />
-          <Skill name={"Java"} body={"<1 year"} />
-          <Skill name={"Python"} body={"3+ years"} />
-          <Skill name={"Rust"} body={"<6 months"} />
-          <Skill name={"SML"} body={"1 year"} />
+        <div className="flex flex-col space-y-5">
+          <p className="flex justify-center text-4xl">Skills</p>
+          <div className="flex flex-row flex-wrap max-w-screen-xs min-w-[18rem] justify-between">
+            <Skill name={"JavaScript"} dashOffset={21} />
+            <Skill name={"TypeScript"} dashOffset={34} />
+            <Skill name={"React JS"} dashOffset={31} />
+            <Skill name={"React Nat."} dashOffset={35} />
+            <Skill name={"Next JS"} dashOffset={37} />
+            <Skill name={"Git"} dashOffset={27} />
+            <Skill name={"CSS"} dashOffset={35} />
+            <Skill name={"Tailwind"} dashOffset={18} />
+            <Skill name={"C++"} dashOffset={40} />
+            <Skill name={"Java"} dashOffset={45} />
+            <Skill name={"Python"} dashOffset={33} />
+            <Skill name={"Rust"} dashOffset={35} />
+            <Skill name={"SML"} dashOffset={34} />
+          </div>
         </div>
       </div>
 
