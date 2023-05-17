@@ -39,12 +39,14 @@ const Notification = ({ show, isSuccessful, removeNotification }: props) => {
       >
         <p>{isSuccess() ? "Email Sent" : "Error"}</p>
         <Button
+          className="bg-white rounded-[50%]"
           href=""
           onClick={(e: any) => {
             e.preventDefault();
           }}
         >
           <Image
+            className="[svg>path]:fill-primary"
             src="/x_nocircle.svg"
             alt="close toast"
             width={16}

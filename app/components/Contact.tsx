@@ -50,15 +50,15 @@ const Contact = ({ addNotification, show }: props) => {
       className="min-h-[30rem] px-5 max-w-lg w-[100%] flex justify-start flex-col text-primary font-mono [&>*]:rounded-md space-y-1 [&>label]:pt-1 [&>input]:px-1 [&>input]:border [&>input]:border-lightdark"
       onSubmit={(e) => sendEmail(e)}
     >
-      <p className="text-2xl pb-5 self-center text-lightdark">Contact</p>
+      <p className="text-2xl pb-5 self-center text-mediumdark">Contact</p>
       <div className="flex flex-row [&>*]:w-[47%] flex-wrap justify-between [&>*]:rounded-[inherit] [&>label]:pb-1 [&>input]:px-1 [&>input]:border [&>input]:border-lightdark">
         <label htmlFor="first_name">First Name</label>
         <label htmlFor="last_name">Last Name</label>
         <input
+          className="text-black"
           type="text"
           id="first_name"
           name="first_name"
-          className="text-black"
           required
         />
         <input
