@@ -22,22 +22,20 @@ const Contact = ({ addNotification, show }: props) => {
     if (show || sent.current) return;
     sent.current = true;
 
-    addNotification(NotiType.SUCCESS);
-    sent.current = false;
-    // emailjs
-    //   .sendForm(
-    //     ensure(process.env.NEXT_PUBLIC_EMAILJS_SERVICE),
-    //     ensure(process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE),
-    //     ensure(form.current)
-    //   )
-    //   .then(() => {
-    //     addNotification(NotiType.SUCCESS);
-    //     sent.current = false;
-    //   })
-    //   .catch((err) => {
-    //     addNotification(NotiType.FAILURE);
-    //     sent.current = false;
-    //   });
+    emailjs
+      .sendForm(
+        ensure(process.env.NEXT_PUBLIC_EMAILJS_SERVICE),
+        ensure(process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE),
+        ensure(form.current)
+      )
+      .then(() => {
+        addNotification(NotiType.SUCCESS);
+        sent.current = false;
+      })
+      .catch((err) => {
+        addNotification(NotiType.FAILURE);
+        sent.current = false;
+      });
   };
 
   useEffect(() => {
