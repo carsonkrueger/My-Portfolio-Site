@@ -131,8 +131,8 @@ export default function Home() {
             <Skill name={"C++"} dashOffset={40} />
             <Skill name={"Java"} dashOffset={45} />
             <Skill name={"Python"} dashOffset={33} />
-            <Skill name={"Rust"} dashOffset={35} />
-            <Skill name={"SML"} dashOffset={34} />
+            <Skill name={"Rust"} dashOffset={48} />
+            <Skill name={"SML"} dashOffset={40} />
           </div>
         </div>
       </div>
