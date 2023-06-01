@@ -101,6 +101,13 @@ export default function Home() {
             href="https://play.google.com/store/apps/details?id=com.crkruege00.REPR"
           />
           <Project
+            name="DuckTyper"
+            body={
+              "Used to determine your typing speeds, on a minimalistic designed website. Built with Next JS, and Tailwind, hosted on Vercel!"
+            }
+            href={"https://duck-typer.vercel.app/"}
+          />
+          <Project
             name="Snake Game"
             body="A snake game built using React JS, Tailwind, and Vite, hosted using Vercel."
             href="https://snake-shake.vercel.app/"

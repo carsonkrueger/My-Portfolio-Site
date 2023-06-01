@@ -9,7 +9,7 @@ export default function Skill({ name, dashOffset }: privateProps) {
       <div className="relative flex justify-center items-center">
         <div className="flex justify-center items-center w-12 h-12 rounded-[50%] shadow-circleOuter">
           {/* OUTER */}
-          <div className="w-8 h-8 bg-invis rounded-[inherit] shadow-gray-400 shadow-circleInner" />
+          <div className="w-8 h-8 bg-invis rounded-[inherit]  shadow-circleInner" />
           {/* INNER */}
         </div>
         <svg
