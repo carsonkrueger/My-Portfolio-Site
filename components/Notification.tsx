@@ -39,6 +39,7 @@ const Notification = ({ show, isSuccessful, removeNotification }: props) => {
       >
         <p>{isSuccess() ? "Email Sent" : "Error"}</p>
         <Button
+          disabled={false}
           className="bg-white rounded-[50%]"
           href=""
           onClick={(e: any) => {
