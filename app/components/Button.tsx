@@ -5,6 +5,7 @@ type privateProps = {
   onClick?: (e: any) => void;
   href?: string;
   target?: string;
+  disabled: boolean;
 };
 
 export default function Button({
@@ -14,11 +15,14 @@ export default function Button({
   onClick,
   href = "",
   target,
+  disabled,
 }: privateProps) {
   return (
-    <a className={className} onClick={onClick} href={href} target={target}>
-      {text}
-      {children}
-    </a>
+    <button className={className} disabled={disabled} onClick={onClick}>
+      <a className="flex" href={href} target={target}>
+        {text}
+        {children}
+      </a>
+    </button>
   );
 }

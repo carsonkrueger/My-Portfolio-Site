@@ -61,6 +61,7 @@ export default function Home() {
             text="Resume"
             href="/Resume.pdf"
             target="_blank"
+            disabled={false}
           />
         </div>
       </header>
@@ -101,6 +102,11 @@ export default function Home() {
             href="https://play.google.com/store/apps/details?id=com.crkruege00.REPR"
           />
           <Project
+            name="Compiler"
+            body="Compiles KXI source code to an assembly language. Uses the Assembler & Virtual Machine I built to create and run byte code! (link available upon request)"
+            href={undefined}
+          />
+          <Project
             name="DuckTyper"
             body={
               "Used to determine your typing speeds, on a minimalistic designed website. Built with Next JS, and Tailwind, hosted on Vercel!"
@@ -117,29 +123,29 @@ export default function Home() {
             body="A program written in C++ that simulates the algorithms that the CPU uses to prioritizes tasks. FCFS, SJF, STRF, and RR algorithms."
             href="https://github.com/carsonkrueger/School-Projects/tree/main/3060/P4"
           />
-          <Project
+          {/* <Project
             name="This Site"
             body="Built using Next JS, and Tailwind, hosted on Vercel!"
             href="#"
-          />
+          /> */}
         </div>
 
         <div className="flex flex-col space-y-5">
           <p className="flex justify-center text-4xl">Skills</p>
           <div className="flex flex-row flex-wrap max-w-screen-xs min-w-[18rem] justify-between">
-            <Skill name={"JavaScript"} dashOffset={21} />
-            <Skill name={"TypeScript"} dashOffset={34} />
-            <Skill name={"React JS"} dashOffset={31} />
+            <Skill name={"TypeScript"} dashOffset={25} />
+            <Skill name={"JavaScript"} dashOffset={19} />
+            <Skill name={"Rust"} dashOffset={17} />
+            <Skill name={"Tailwind"} dashOffset={13} />
+            <Skill name={"React JS"} dashOffset={21} />
             <Skill name={"React Nat."} dashOffset={35} />
             <Skill name={"Next JS"} dashOffset={37} />
-            <Skill name={"Git"} dashOffset={27} />
-            <Skill name={"CSS"} dashOffset={35} />
-            <Skill name={"Tailwind"} dashOffset={18} />
+            <Skill name={"Git"} dashOffset={25} />
+            <Skill name={"CSS"} dashOffset={25} />
             <Skill name={"C++"} dashOffset={40} />
             <Skill name={"Java"} dashOffset={45} />
-            <Skill name={"Python"} dashOffset={33} />
-            <Skill name={"Rust"} dashOffset={48} />
-            <Skill name={"SML"} dashOffset={40} />
+            <Skill name={"Python"} dashOffset={30} />
+            {/* <Skill name={"ML"} dashOffset={40} /> */}
           </div>
         </div>
       </div>
